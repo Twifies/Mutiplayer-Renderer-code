@@ -55,8 +55,6 @@ Shader "LineRenderer"
 
 				float2 lineDir = normalize(lineEnd - lineStart);
 				float2 lineNorm = cross(float3(lineDir,0), float3(0,0,1)).xy;
-
-				// Expand by a pixel in each direction
 				lineNorm = normalize(lineNorm) * (lineWidth+1);
 
 				v2f o;
@@ -88,7 +86,6 @@ Shader "LineRenderer"
 				float2 vpos = i.linePos.xy;
 
 
-				// Share this and pass as parameter?
 				float2 dir = normalize(i.lineEnd - i.lineStart);
 				float startDist = dot(dir, i.lineStart);
 				float endDist = dot(dir, i.lineEnd);
