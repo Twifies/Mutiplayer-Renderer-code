@@ -93,7 +93,6 @@ Shader "LineRenderer"
 				float normDist = dot(norm, i.lineStart);
 
 				float4 color = i.color;
-				// dist to line, assuming inside
 				float alpha = abs(dot(norm, vpos) - normDist);
 
 				float capDist = dot(dir, vpos);
